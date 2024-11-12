@@ -1,0 +1,29 @@
+
+.circle-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.container-text{
+    max-width: 750px;
+}
+.btn-circle{
+    height: 50px;
+    border-radius: 50ch;
+}
+.card-item{
+    height: 280px;
+    min-height: max-content;
+    background-color: white;
+    text-align: center;
+    border-radius: 28px;
+}
+.icon-lg{
+    font-size: 150px;
+}
+.rounded-img{
+    border-radius: 15px;
+}
+.text-vvlg{
+    font-size: 150px;
+}

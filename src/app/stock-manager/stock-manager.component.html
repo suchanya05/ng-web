@@ -1,0 +1,77 @@
+<div class="bg-lightslategray pt-3" style="min-height: 93vh;">
+    <div class=" container-md bg-gradient-r rounded-3" style="padding: 2px;">
+        <div class="p-4 rounded-2 container-md bg-white ">
+            <div class="d-flex justify-content-between">
+                <div class="w-75">
+                    <label class="form-label fs-3 fw-bold text-gradient">Stock Manager</label>
+                    <div class="row row-cols-3">
+                        <div>
+                            <label class="form-label" for="productName">Product name</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="productName">Product Mat</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="productName">Stock Type</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="productName">Status</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <btn-gradient (click)="onSearch()">
+                        <i class="bi bi-search-heart-fill text-gradient fs-5"></i>
+                    </btn-gradient>
+                    <btn-gradient>
+                        <span class="text-gradient px-3 py-2">Add Stock</span>
+                    </btn-gradient>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" container-md bg-gradient-r rounded-3 mt-4" style="padding: 2px;">
+        <div class="p-4 rounded-2 container-md bg-white ">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><a class="text-gradient fs-4">#</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Name</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Mat</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Price</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Quantity</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Action</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of dataStockTable; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.matCode }}</td>
+                        <td>{{ item.price }}</td>
+                        <td >{{ item.qty }}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm">
+                                <i class="bi bi-pen text-gradient"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm">
+                                <i class="bi bi-trash3 text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

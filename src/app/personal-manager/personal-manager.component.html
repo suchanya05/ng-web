@@ -1,0 +1,69 @@
+<div class="bg-lightslategray pt-3" style="min-height: 93vh;">
+    <div class=" container-md bg-gradient-r rounded-3" style="padding: 2px;">
+        <div class="p-4 rounded-2 container-md bg-white ">
+            <div class="d-flex justify-content-between">
+                <div class="w-75">
+                    <label class="form-label fs-3 fw-bold text-gradient">Personal Manager</label>
+                    <div class="row row-cols-3">
+                        <div>
+                            <label class="form-label" for="productName">User Name</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="productName">Name</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="productName">Role</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <btn-gradient >
+                        <i class="bi bi-search-heart-fill text-gradient fs-5"></i>
+                    </btn-gradient>
+                    <btn-gradient (click)="addPersonal()">
+                        <span class="text-gradient px-3 py-2">Add Personal</span>
+                    </btn-gradient>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class=" container-md bg-gradient-r rounded-3 mt-4" style="padding: 2px;">
+        <div class="p-4 rounded-2 container-md bg-white ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><a class="text-gradient fs-4">#</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">User Name</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Name</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">role</a></th>
+                        <th scope="col"><a class="text-gradient fs-4">Action</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of dataPersonalTable; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.role }}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm">
+                                <i class="bi bi-pen text-gradient"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm">
+                                <i class="bi bi-trash3 text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

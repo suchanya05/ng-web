@@ -1,0 +1,69 @@
+<div class="bg-lightslategray pt-3" style="min-height: 93vh;">
+    <div class=" container-md bg-gradient-r rounded-3" style="padding: 2px;">
+        <div class="p-4 rounded-2 container-md bg-white ">
+            <div class="d-flex justify-content-between">
+                <div class="w-50">
+                    <label class="form-label fs-3 fw-bold text-gradient">Add Personal</label>
+                    <div class="row row-cols-1">
+                        <div>
+                            <label class="form-label" for="productName">User Name</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter User Name" [(ngModel)]="username">
+                        </div>
+                        <div>
+                            <label class="form-label" for="Password">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                    [ngClass]="{'border-end-0': true}" [(ngModel)]="password">
+                                <span class="input-group-text bg-white border-start-0">
+                                    <button type="button" class="btn btn-sm p-0" id="togglePassword"
+                                        (click)="togglePasswordVisibility()">
+                                        <i [ngClass]="showPassword ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label" for="productName">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" [(ngModel)]="name">
+
+                        </div>
+                        <div>
+                            <label class="form-label" for="userrole">Role</label>
+                            <select class="form-control" id="userrole" [(ngModel)]="role">
+                                <option value="" disabled selected>Select Role</option>
+                                <option value="5">Admin</option>
+                                <option value="4">Editor</option>
+                                <option value="3">Viewer</option>
+                                <option value="2">Customer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-50 d-flex flex-column align-items-center ">
+                    <label class="form-label fs-5 fw-bold text-gradient">Profile Picture</label>
+                    <div class="position-relative d-inline-block mb-3">
+                        <img *ngIf="previewImage" [src]="previewImage" alt="Preview Image" class="img-thumbnail"
+                            style="width: 150px; height: 150px;">
+                        <img *ngIf="!previewImage" src="https://via.placeholder.com/150" alt="Placeholder Image"
+                            class="img-thumbnail" style="width: 150px; height: 150px;">
+                        <button *ngIf="previewImage" type="button" class="btn btn-sm position-absolute top-0 end-0 m-1"
+                            (click)="removeImage()">
+                            <i class="bi bi-x-square-fill text-danger"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <input type="file" class="form-control" id="profilePicture" (change)="onFileSelected($event)">
+                    </div>
+
+
+
+                    <div class="mt-5 ">
+                        <button class="btn btn-success me-3 px-4" (click)="savePersonal()">Save</button>
+                        <button class="btn btn-danger px-4">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
